@@ -1,3 +1,11 @@
+/**
+ * 观察某个对象的所有属性
+ * @param {Object} obj
+ * 
+ * 待优化
+ * 1、深度遍历 object
+ */
+
 function observe(obj) {
     for (const key in obj) {
         if (Object.hasOwnProperty.call(obj, key)) {
