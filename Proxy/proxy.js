@@ -20,14 +20,13 @@ function observe(obj) {
     var object = new Proxy(obj,{
         set(target, key, value, receiver){
             console.log("new Proxy ==", target, key, value, receiver);
-
             target[key] = value;
-            console.log("target[key] ==", target[key]);
+            console.log("observe set target[key] ==", target[key]);
             return Reflect.set(target, key, value,receiver);
         },
         get(target, key) {
             // console.log(" ==", target, key);
-            console.log("target[key] ==", target[key]);
+            console.log("observe get target[key] ==", target[key]);
             functionArr.add(window.__func)
             return target[key]
         },
@@ -52,7 +51,7 @@ function observeArr(obj) {
                 },
                 get(target, key, receiver) {
                     // console.log("observeArr get:function = internalValue = ", internalValue );
-                    console.log(" ==", target, key, receiver);
+                    console.log("observeArr get Proxy", target, key, receiver);
                     return Reflect.get(target, key, receiver);
                 },
             })
@@ -71,12 +70,12 @@ function observeDefinePropertyObj(obj) {
       let funcs = [];
       Object.defineProperty(obj, key, {
         get: function () {
-          console.log("get internalValue=", internalValue);
+          console.log("observeDefinePropertyObj get internalValue=", internalValue);
           return internalValue;
         },
         set: function (val) {
           internalValue = val;
-          console.log("set internalValue ==", internalValue);
+          console.log("observeDefinePropertyObj set internalValue ==", internalValue);
         },
       });
     }

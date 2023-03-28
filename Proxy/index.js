@@ -7,14 +7,18 @@ var user = {
     }
   };
   
-// user =  observe(user); // 观察
 
 // -------
-// user =  observeArr(user); // 观察 使用   user.arr[0] 进入get function
+user =  observeArr(user); // 观察 使用   user.arr[0] 进入get function
+
+
+// ------- 
+user =  observe(user); // 观察
+
 
 // --------
-observeDefinePropertyObj(user); // 观察
-console.log("user ==", user);
+// observeDefinePropertyObj(user); // 观察
+// console.log("user ==", user);
   
   // 显示姓氏
   function showFirstName() {
