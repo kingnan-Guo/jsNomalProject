@@ -1,6 +1,7 @@
 var user = {
     name: '袁进',
     birth: '2002-5-7',
+    arr: [1, 2, 3]
   };
   
   observe(user); // 观察
