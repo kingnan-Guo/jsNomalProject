@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="a">
+        <div id="b">
+            <span id="c">12321</span>
+        </div>
+    </div>
+    <script>
+        // document.getElementById('c').addEventListener('mousedown', () =>{
+        //     console.log("mousedown ==c");
+        // }, true)
+        // document.getElementById('b').addEventListener('mousedown', () =>{
+        //     console.log("mousedown ==b");
+        // }, true)
+
+        // 只有一次
+        // document.getElementById('c').addEventListener('mousedown', () =>{
+        //     console.log("mousedown ==c");
+        // },  { once: true })
+        // document.getElementById('b').addEventListener('mousedown', () =>{
+        //     console.log("mousedown ==b");
+        // }, true)
+
+
+        // 
+        document.getElementById('c').addEventListener('mousedown', () =>{
+            console.log("mousedown ==c");
+        },  { capture: false, prassive: true, once:false })
+        document.getElementById('b').addEventListener('mousedown', () =>{
+            console.log("mousedown ==b");
+
+            document.getElementById('b').style.setProperty("background-color", "red", "important")
+        },  { capture: false, prassive: false, once:false })
+
+
+
+
+        var arr = [1, 2, 3, 4,5]
+        const sum = arr.reduce(function (pre,cur,index, arr) {
+            console.log(pre,cur,index)
+            // return pre + cur
+        })
+        console.log(sum)
+
+        // prassive 阻止默认事件  e.preventDefault() 
+
+
+
+    </script>
+    
+</body>
+</html>
