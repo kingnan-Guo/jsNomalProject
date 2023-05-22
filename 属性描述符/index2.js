@@ -45,3 +45,5 @@ var obj4 = {}
 console.log(Object.isFrozen(obj4));
 Object.isFrozen(obj4)//阻止添加新属性。 删除旧对象， 修改属性值
 console.log(Object.isFrozen(obj4));
+
+

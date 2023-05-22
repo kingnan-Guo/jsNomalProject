@@ -1,3 +1,5 @@
+// get set 与 value  writable 互斥 不能同时设置
+
 console.log(Object.prototype.__proto_ == null);
 
 
