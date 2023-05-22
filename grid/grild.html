@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grild</title>
+</head>
+<body>
+    <div class="box">
+        <!-- <div class="header">header</div> -->
+
+
+        <div class="container">
+            <div class="item">item</div> 
+            <div class="item">
+              <p class="sub-item">sub-item</p>
+            </div>
+            <div class="item"item>item</div>
+            <div class="item"item>item</div>
+            <div class="item"item>item</div>
+            <div class="item"item>item</div>
+            <div class="item"item>item</div>
+            <div class="item"item>item</div>
+            <div class="item"item>item</div>
+        </div>
+        <div class="wrapper">
+            <div class="box header">Header</div>
+            <div class="box sidebar">Sidebar</div>
+            <div class="box content">Content</div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    </div>
+
+
+
+    <div>
+
+        <h1>先行后列</h1>
+        <div class="wrapper-3">
+          <div class="one item">One</div>
+          <div class="two item">Two</div>
+          <div class="three item">Three</div>
+          <div class="four item">Four</div>
+          <div class="five item">Five</div>
+          <div class="six item">Six</div>
+          <div class="seven item">Seven</div>
+          <div class="eight item">eight</div>
+          <div class="nine item">Nine</div>
+        </div>
+        
+        <h1>先列后行</h1>
+        <div class="wrapper-1">
+          <div class="one item">One</div>
+          <div class="two item">Two</div>
+          <div class="three item">Three</div>
+          <div class="four item">Four</div>
+          <div class="five item">Five</div>
+          <div class="six item">Six</div>
+          <div class="seven item">Seven</div>
+          <div class="eight item">eight</div>
+          <div class="nine item">Nine</div>
+        </div>
+        
+        <h1>先行后列：dense</h1>
+        <div class="wrapper-2">
+          <div class="one item">One</div>
+          <div class="two item">Two</div>
+          <div class="three item">Three</div>
+          <div class="four item">Four</div>
+          <div class="five item">Five</div>
+          <div class="six item">Six</div>
+          <div class="seven item">Seven</div>
+          <div class="eight item">eight</div>
+          <div class="nine item">Nine</div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            display:grid;
+            /* grid-template-columns: repeat(auto-fill, 300px); */
+            /* grid-template-columns: 200px 2fr 2fr; */
+            grid-template-columns: 1fr 1fr minmax(300px, 2fr) 1fr;
+            grid-gap: 0;
+            /* grid-template-rows: 200px 200px 200px; */
+            grid-auto-rows: 60px;
+            
+
+        }
+        .item{
+            border: 1px solid #d4d2d2;
+            /* background-color: yellow; */
+        }
+
+
+
+
+
+        /* ---------------------------- */
+
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #999;
+        }
+
+        .content {
+            grid-area: content;
+            background-color: #999;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #999;
+        }
+
+        .wrapper {
+            /* margin: 50px; */
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 120px  120px  120px 120px  120px  120px;
+            grid-template-areas:"content  . header"
+                                " content sidebar sidebar";
+/* 
+
+            ". header  sidebar "
+            " content"; */
+
+
+            /* background-color: #fff;
+            color: #444; */
+        }
+
+
+
+
+        /* ---------------------------------- */
+
+
+
+
+        .wrapper-3 {
+            display: grid;
+            grid-template-columns: 100px 200px 50px  ;
+            grid-auto-flow: row; /**默认*/
+            grid-gap: 5px;
+            grid-auto-rows: 50px;
+            /* justify-items: center; */
+            /* align-items: center; */
+            
+        }
+        .wrapper-1 {
+            display: grid;
+            grid-auto-columns: 100px;
+            grid-auto-flow: column;
+            grid-gap: 5px;
+            grid-template-rows:  50px 50px; /** 每写一个值代表一行*/
+        }
+        .wrapper-2 {
+            display: grid;
+            grid-template-columns: 100px 200px 100px;
+            /** 强制补齐行 */
+            grid-auto-flow: row dense; 
+            grid-gap: 5px;
+            grid-auto-rows: 50px;
+
+            justify-content: space-around;
+        }
+
+
+        .one {
+            background: #19CAAD;
+        }
+        .two { 
+            background: #8CC7B5;
+        }
+        .three {
+            background: #D1BA74;
+        }
+        .four {
+            background: #BEE7E9;
+        }
+        .five {
+            background: #E6CEAC;
+        }
+        .six {
+            grid-column-start: span 3;
+            background: #ECAD9E;
+        }
+        .seven {
+            background: #BEEDC7;
+        }
+        .eight {
+            background: #F4606C;
+        }
+        .nine {
+            background: #A0EEE1;
+        }
+
+        /* ------------------- */
+
+        
+
+    </style>
+</body>
+</html>
